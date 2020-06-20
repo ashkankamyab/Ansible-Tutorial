@@ -13,12 +13,12 @@ centosis = {
   "host5" => "192.168.33.22"
 }
 
-ubuntu-c = {
+ubuntuc = {
   "host6" => "192.168.33.30"
 }
 
 Vagrant.configure("2") do |config|
-  ubhosts.each do |name, ip|
+  ubuntus.each do |name, ip|
     config.vm.define name do |machine|
       machine.vm.box = "ubuntu/bionic64"
       machine.vm.hostname = "%s" % name
@@ -47,7 +47,7 @@ end
 
 
 Vagrant.configure("2") do |config|
-  ubuntu-c.each do |name, ip|
+  ubuntuc.each do |name, ip|
     config.vm.define name do |machine|
       machine.vm.box = "ubuntu/bionic64"
       machine.vm.hostname = "%s" % name
