@@ -14,7 +14,7 @@ centosis = {
 }
 
 ubuntuc = {
-  "ububtu-c" => "192.168.33.30"
+  "ubuntu-c" => "192.168.33.30"
 }
 
 Vagrant.configure("2") do |config|
@@ -26,6 +26,7 @@ Vagrant.configure("2") do |config|
       machine.vm.provider "virtualbox" do |v|
           v.name = name
           v.customize ["modifyvm", :id, "--memory", 256]
+      config.vm.synced_folder "data/", "/vagrant"
       end
     end
   end
@@ -40,21 +41,23 @@ Vagrant.configure("2") do |config|
       machine.vm.provider "virtualbox" do |v|
           v.name = name
           v.customize ["modifyvm", :id, "--memory", 256]
+      config.vm.synced_folder "data/", "/vagrant"
       end
     end
   end
 end
 
-
 Vagrant.configure("2") do |config|
   ubuntuc.each do |name, ip|
     config.vm.define name do |machine|
-      machine.vm.box = "ubuntu/bionic64"
+      machine.vm.box = "centos/7"
       machine.vm.hostname = "%s" % name
       machine.vm.network :private_network, ip: ip
       machine.vm.provider "virtualbox" do |v|
           v.name = name
           v.customize ["modifyvm", :id, "--memory", 256]
+      config.vm.synced_folder "data/", "/vagrant"
+      config.vm.provision "shell", inline: "cat /vagrant/servers >> /etc/hosts"
       end
     end
   end
