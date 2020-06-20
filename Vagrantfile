@@ -50,7 +50,7 @@ end
 Vagrant.configure("2") do |config|
   ubuntuc.each do |name, ip|
     config.vm.define name do |machine|
-      machine.vm.box = "centos/7"
+      machine.vm.box = "ubuntu/bionic64"
       machine.vm.hostname = "%s" % name
       machine.vm.network :private_network, ip: ip
       machine.vm.provider "virtualbox" do |v|
