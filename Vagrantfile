@@ -54,8 +54,12 @@ Vagrant.configure("2") do |config|
       machine.vm.hostname = "%s" % name
       machine.vm.network :private_network, ip: ip
       machine.vm.provider "virtualbox" do |v|
+          v.name = name
+          v.customize ["modifyvm", :id, "--memory", 256, "--cpus", 1, "--cpuexecutioncap", "50"]
+      config.vm.synced_folder "data/", "/vagrant"
+      config.vm.provision "shell", inline: "apt update && apt install sshpass -y; cat /vagrant/servers >> /etc/hosts"
         v.name = name
-        v.customize ["modifyvm", :id, "--memory", 256, "--cpus", 1]
+        v.customize ["modifyvm", :id, "--memory", 256, "--cpus", 2]
     config.vm.synced_folder "data/", "/vagrant"
       end
     end
