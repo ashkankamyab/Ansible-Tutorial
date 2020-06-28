@@ -57,7 +57,7 @@ Vagrant.configure("2") do |config|
           v.name = name
           v.customize ["modifyvm", :id, "--memory", 256]
       config.vm.synced_folder "data/", "/vagrant"
-      config.vm.provision "shell", inline: "cat /vagrant/servers >> /etc/hosts"
+      config.vm.provision "shell", inline: "apt update && apt install sshpass -y; cat /vagrant/servers >> /etc/hosts"
       end
     end
   end
