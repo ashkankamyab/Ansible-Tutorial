@@ -2,7 +2,7 @@
 ubuntu-c ansible_connection=local
 
 [centos]
-centos1 ansible_port=2222
+centos1 ansible_port=22
 centos[2:3]
 
 [centos:vars]
