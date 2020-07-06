@@ -20,4 +20,4 @@ centos
 ubuntu
 
 [linux:vars]
-nsible_port=22
+ansible_port=22
