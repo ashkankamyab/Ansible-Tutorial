@@ -13,7 +13,7 @@ ubuntu[1:3]
 
 [ubuntu:vars]
 ansible_become=true
-ansible_become_pass=password
+ansible_password=password
 
 [linux:children]
 centos
