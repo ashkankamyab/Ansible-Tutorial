@@ -3,3 +3,4 @@ venv
 *.log
 *.swp
 ~$Slids.pptx
+.DS_Store
