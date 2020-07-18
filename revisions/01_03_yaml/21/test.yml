@@ -1,0 +1,18 @@
+---
+# Every YAML file should start with three dashes
+
+- Clint Eastwood:
+    Born: 1930
+    Best Movie: Million Dollar Baby
+- Quentin Tarantino:
+    Born: 1963
+    Best Movie: Pulp Fiction 
+- Martin Scorsese:
+    Born: 1942
+    Best Movie: Casino
+- Mohsen Makhmalbaf:
+    Born: 1957
+    Best Movie: Sex & Philosophy
+
+# Every YAML file should end with three dots
+...
