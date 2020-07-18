@@ -1,0 +1,7 @@
+---
+
+key_1: first value
+key_2: second value
+
+# Every YAML file should end with three dots
+...
