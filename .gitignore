@@ -4,3 +4,4 @@ venv
 *.swp
 ~$Slids.pptx
 .DS_Store
+data/Codes/
