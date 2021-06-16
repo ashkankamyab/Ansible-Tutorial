@@ -1,4 +1,6 @@
 ---
+ansible_user: ubuntu
+ansible_password: password
 ansible_become: true
 ansible_become_pass: password
 ...
